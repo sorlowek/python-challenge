@@ -53,8 +53,20 @@ print("Election Results")
 print("---------------------")
 print(f"Total Votes: {str(total_votes)}")
 print("---------------------")
+line1 = "Election Results"
+line2 = "---------------------"
+line3 = str(f"Total Votes: {str(total_votes)}")
+line4 = "---------------------"
+line5 = ""
 for x in range (4):
     print(f"{str(candidates[x])}: {str(percent_votes[x])} ({str((vote_count[x]))})")
+    line5 += str(f"{str(candidates[x])}: {str(percent_votes[x])} ({str((vote_count[x]))})\n")
+line6 = "---------------------"
+line7 = str(f"Winner: {winner['Candidate_names'].values}")
+
+output = open("output.txt", "w")
+output.write('{}\n{}\n{}\n{}\n{}\n{}\n{}\n'.format(line1,line2,line3,line4,line5,line6,line7))
+
 print("---------------------")
 #print(f"Winner: {str(winner)}")
 print(f"Winner: {winner['Candidate_names'].values}")
